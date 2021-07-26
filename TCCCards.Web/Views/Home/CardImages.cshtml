@@ -1,0 +1,78 @@
+﻿
+@{
+    Layout = null;
+    //var imagePath = "";
+    //WebImage photo = new WebImage(@"~\Images\Card5.jpg");
+    //if (photo != null)
+    //{
+    //   imagePath = @"\Images\FlipImages\Card5.jpg";
+    //   photo.FlipVertical();
+    //   photo.Save(@"~\" + imagePath);
+    //}
+
+
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CardImages</title>
+
+    <script language="javascript" type="text/javascript">
+        $(document).ready(function () {
+            $("#originalImage").on('click', function () {
+                alert("fdsf");
+                $('#originalImage').toggle('slow');
+                $('#flipimage').toggle('slow');
+                /*  $('#changeMe').prop('src', this.src);*/
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <div class="row justify-content-md-start">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Credit Card Images</h5>
+                </div>
+
+                <div class="card-body" style="padding:10px;">
+                    <img src="~/Images/Card1.jpg" alt="Sample Image" width="200" />
+                </div><div class="card-body" style="padding:10px;">
+                    <img src="~/Images/Card2.png" alt="Sample Image" width="200" />
+                </div>
+                <div class="card-body" style="padding:10px;">
+                    <img src="~/Images/Card3.jpg" alt="Sample Image" width="200" />
+                </div>
+
+                <div class="card-body" style="padding:30px;">
+                    <img src="~/Images/Card1.jpg" alt="Sample Image" width="200" />
+
+                    <img src="~/Images/Card2.png" alt="Sample Image" width="200" />
+
+                    <img src="~/Images/Card3.jpg" alt="Sample Image" width="200" />
+
+                    <img src="~/Images/Card4.jpg" alt="Sample Image" width="200" />
+
+                    <img src="~/Images/Card5.jpg" alt="Sample Image" width="200" class="flipimage" id="originalImage" />
+                    <img id="flipimage" src="~/Images/FlipImagesCard5.jpg" visible="false" alt="Back Image" width="200">
+
+                    <img src="~/Images/Card6.jpg" alt="Sample Image" width="200" />
+                </div>
+                @*<h1>Flip Image Vertically</h1>
+                    @if (imagePath != "")
+                    {
+                       <div class="card-body" style="padding:30px;">
+                          <img src="@imagePath" alt="Flip Image" width="200" />
+                       </div>
+                    }*@
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
