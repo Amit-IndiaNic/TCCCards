@@ -13,8 +13,8 @@ namespace TCCCards.Models.CustomerInfo
         [Required]
         [StringLength(100)]
         public string LastName { get; set; }
+        public User User { get; set; }
 
- 
         public virtual ICollection<CardDetail> CardDetails { get; set; } = new List<CardDetail>();
         public virtual ICollection<Address> Addresses { get; set; } = new List<Address>();
 

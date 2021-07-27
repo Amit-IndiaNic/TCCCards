@@ -1,5 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using TCCCards.Models.CustomerInfo;
 
 namespace TCCCards.Models.Card
 {
@@ -17,5 +19,11 @@ namespace TCCCards.Models.Card
         [Required]
         [StringLength(200)]
         public string ImageName { get; set; }
+
+        [Required]
+        [StringLength(200)]
+        public double Cost { get; set; }
+
+        public virtual ICollection<CardDetail> CardDetails { get; set; } = new List<CardDetail>();
     }
 }

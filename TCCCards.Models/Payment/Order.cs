@@ -12,6 +12,7 @@ namespace TCCCards.Models.Payment
         public Customer Customer { get; set; }
         public CardTemplate Template { get; set; }
         public PaymentType PaymentType { get; set; }
+
         public DateTime OrderDate { get; set; }
 
         public string OrderStatus { get; set; }

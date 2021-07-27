@@ -19,15 +19,44 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>CardImages</title>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script language="javascript" type="text/javascript">
+        //$(document).ready(function () {
+        //    $("#originalImage").on('click', function () {
+        //        alert("fdsf");
+        //        $('#originalImage').toggle('slow');
+        //        $('#flipimage').toggle('slow');
+        //        /*  $('#changeMe').prop('src', this.src);*/
+        //    });
+        //}
         $(document).ready(function () {
-            $("#originalImage").on('click', function () {
-                alert("fdsf");
-                $('#originalImage').toggle('slow');
-                $('#flipimage').toggle('slow');
-                /*  $('#changeMe').prop('src', this.src);*/
+            $('#canvas').on("click", "#cardimage", function (e) {
+                alert('hi');
             });
+        });
+        
+    </script>
+    <script language="javascript" type="text/javascript">
+        var el_up = document.getElementById("cardimage");
+        //var el_down = document.getElementById("GFG_DOWN");
+        var path = "Path = " +
+            "https://localhost:44444//Images//Card4.jpg";
+
+        //el_up.innerHTML = path;
+
+        function gfg_Run() {
+            alert(path);
+            alert(path.replace(/^.*[\\\/]/, ''));
+        };
+            function image(img) {
+                var src = img.src;
+                var imagename = src.replace(/^.*[\\\/]/, '');
+                if (imagename == "Card4.jpg" ) {
+                    img.src = src.replace(imagename, 'Card2.png');
+                }
+                else {
+                    img.src = "/Images/Card4.jpg";
+                }
         }
     </script>
 </head>
@@ -43,13 +72,25 @@
                 <div class="card-body" style="padding:10px;">
                     <img src="~/Images/Card1.jpg" alt="Sample Image" width="200" />
                 </div><div class="card-body" style="padding:10px;">
-                    <img src="~/Images/Card2.png" alt="Sample Image" width="200" />
-                </div>
+                    <img src="~/Images/Card2.png" alt="Sample Image" width="600" onclick="image(this)" />
+    <a href="#">
+        <img src="~/Images/Card2.png" onclick="image(this)" alt="Sample Image" width="600" />"/>
+    </a>
+    <div id="canvas">
+        <div id="cinematic-overlay"></div>
+        <img src="~/Images/Card2.png" id="cardimage" alt="" width="60px" height="40px">
+    </div>
+    <img src="~/Images/Card2.png"
+         alt="pic id code"
+         onClick="hello()"
+         role="button"
+         tabIndex="0" />
+</div>
                 <div class="card-body" style="padding:10px;">
                     <img src="~/Images/Card3.jpg" alt="Sample Image" width="200" />
                 </div>
 
-                <div class="card-body" style="padding:30px;">
+                @*<div class="card-body" style="padding:30px;">
                     <img src="~/Images/Card1.jpg" alt="Sample Image" width="200" />
 
                     <img src="~/Images/Card2.png" alt="Sample Image" width="200" />
@@ -59,10 +100,10 @@
                     <img src="~/Images/Card4.jpg" alt="Sample Image" width="200" />
 
                     <img src="~/Images/Card5.jpg" alt="Sample Image" width="200" class="flipimage" id="originalImage" />
-                    <img id="flipimage" src="~/Images/FlipImagesCard5.jpg" visible="false" alt="Back Image" width="200">
+                    <img id="flipimage" src="~/Images/FlipImages/Card5.jpg" visible="false" alt="Back Image" width="200">
 
                     <img src="~/Images/Card6.jpg" alt="Sample Image" width="200" />
-                </div>
+                </div>*@
                 @*<h1>Flip Image Vertically</h1>
                     @if (imagePath != "")
                     {

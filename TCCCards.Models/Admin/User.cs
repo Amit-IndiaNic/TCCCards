@@ -16,8 +16,6 @@ namespace TCCCards.Models
 
         public bool RememberMe { get; set; }
 
-        public Customer Customer { get; set; }
-
     }
 }
 

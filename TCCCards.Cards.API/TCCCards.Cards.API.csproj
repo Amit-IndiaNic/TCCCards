@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TCCCards.Models\TCCCards.Models.csproj" />
+    <ProjectReference Include="..\TCCCards.Service\TCCCards.Service.csproj" />
   </ItemGroup>
 
 </Project>

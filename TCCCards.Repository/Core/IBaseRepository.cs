@@ -19,14 +19,5 @@ namespace TCCCards.Repository.Core
         void Insert(T entity);
         void Update(T entity);
         void Delete(T entity);
-        //List<T> GetFromProcedure(string procName, params object[] args);
-        //Task<T> WithConnection<T>(Func<IDbConnection, Task<T>> getData);
     }
-
-    //public interface IAuditableBaseRepository<T> : IBaseRepository<T>
-    //    where T : BaseEntity
-    //{
-    //    void InsertWithAudit(T entity, CoreAuditEntity auditDetails);
-    //    void UpdateAudit<TM>(TM entity, TM newEntity, CoreAuditEntity auditDetails);
-    //}
 }

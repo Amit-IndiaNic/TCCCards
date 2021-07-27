@@ -2,7 +2,7 @@
 using System.Security.Cryptography;
 using System.Text;
 using System.Web.Mvc;
-using TCCCards.Web.ViewModels;
+using TCCCards.ViewModels.Account;
 
 namespace TCCCards.Web.Controllers
 {

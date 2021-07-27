@@ -27,5 +27,6 @@ namespace TCCCards.Models.Card
 
         public CardTemplate Template { get; set; }
         public Customer Customer { get; set; }
+
     }
 }

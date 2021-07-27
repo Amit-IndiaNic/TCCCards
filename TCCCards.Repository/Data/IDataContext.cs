@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 using System.Threading.Tasks;
 using TCCCards.Models;
 
@@ -37,9 +35,5 @@ namespace TCCCards.Repository.Data
 
         Task<int> CommitAsync();
 
-        //DynamicQueryDataSourceResult RunQuery(DynamicQueryDataSourceRequest request);
-
-        //List<T> GetFromProcedure<T>(string procName, params object[] args)
-        //    where T : class;
     }
 }
