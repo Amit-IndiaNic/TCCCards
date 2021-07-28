@@ -7,7 +7,7 @@ namespace TCCCards.Service.Contact
     {
         List<CardDetailListViewModel> GetAll();
         List<CardDetailListViewModel> GetByCustomerId(int customerId);
-        CardDetailListViewModel GetById(int id);
+        AddEditCardDetailViewModel GetById(int id);
         //int Insert(AddEditCardDetailViewModel model, string userName);
         //int Update(AddEditCardDetailViewModel model, string userName);
     }

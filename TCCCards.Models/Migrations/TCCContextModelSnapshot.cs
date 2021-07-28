@@ -80,6 +80,10 @@ namespace TCCCards.Models.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<double>("Cost")
+                        .HasMaxLength(200)
+                        .HasColumnType("float");
+
                     b.Property<string>("CreatedBy")
                         .HasColumnType("nvarchar(max)");
 
@@ -208,7 +212,12 @@ namespace TCCCards.Models.Migrations
                     b.Property<DateTime?>("ModifiedOn")
                         .HasColumnType("datetime2");
 
+                    b.Property<int?>("UserId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Customers");
                 });
@@ -306,9 +315,6 @@ namespace TCCCards.Models.Migrations
                     b.Property<DateTime?>("CreatedOn")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("CustomerId")
-                        .HasColumnType("int");
-
                     b.Property<string>("EmailId")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -333,8 +339,6 @@ namespace TCCCards.Models.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CustomerId");
-
                     b.ToTable("Users");
                 });
 
@@ -345,7 +349,7 @@ namespace TCCCards.Models.Migrations
                         .HasForeignKey("CustomerId");
 
                     b.HasOne("TCCCards.Models.Card.CardTemplate", "Template")
-                        .WithMany()
+                        .WithMany("CardDetails")
                         .HasForeignKey("TemplateId");
 
                     b.Navigation("Customer");
@@ -360,6 +364,15 @@ namespace TCCCards.Models.Migrations
                         .HasForeignKey("CustomerId");
 
                     b.Navigation("Customer");
+                });
+
+            modelBuilder.Entity("TCCCards.Models.CustomerInfo.Customer", b =>
+                {
+                    b.HasOne("TCCCards.Models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("TCCCards.Models.Payment.Order", b =>
@@ -383,13 +396,9 @@ namespace TCCCards.Models.Migrations
                     b.Navigation("Template");
                 });
 
-            modelBuilder.Entity("TCCCards.Models.User", b =>
+            modelBuilder.Entity("TCCCards.Models.Card.CardTemplate", b =>
                 {
-                    b.HasOne("TCCCards.Models.CustomerInfo.Customer", "Customer")
-                        .WithMany()
-                        .HasForeignKey("CustomerId");
-
-                    b.Navigation("Customer");
+                    b.Navigation("CardDetails");
                 });
 
             modelBuilder.Entity("TCCCards.Models.CustomerInfo.Customer", b =>
