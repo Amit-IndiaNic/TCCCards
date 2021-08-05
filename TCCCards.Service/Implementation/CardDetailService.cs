@@ -1,5 +1,4 @@
-﻿
-using Autofac.Features.Indexed;
+﻿using Autofac.Features.Indexed;
 using System.Collections.Generic;
 using System.Linq;
 using TCCCards.Models.Card;

@@ -1,9 +1,5 @@
 ﻿using Autofac.Features.Indexed;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TCCCards.Repository.Data;
 
 namespace TCCCards.Repository.Core

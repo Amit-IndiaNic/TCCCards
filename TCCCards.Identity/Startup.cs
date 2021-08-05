@@ -54,9 +54,9 @@ namespace TCCCards.Identity
 
 
 
-            services.AddTransient<IResourceOwnerPasswordValidator, ResourceOwnerPasswordValidator>();
-            services.AddTransient<IProfileService, ProfileService>();
-            services.AddTransient<CustomUserService>();
+            services.AddSingleton<IResourceOwnerPasswordValidator, ResourceOwnerPasswordValidator>();
+            services.AddSingleton<IProfileService, ProfileService>();
+            services.AddSingleton<CustomUserService>();
             services.AddDbContext<TCCContext>(o =>
             {
                 o.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
